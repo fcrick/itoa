@@ -1,0 +1,20 @@
+{
+  "name": "@fcrick/itoa",
+  "version": "1.0.0",
+  "description": "Minimal i32 itoa in web assembly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize --noDebug",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "author": "Francis Crick <fcrick@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "assemblyscript": "fcrick/assemblyscript#v1"
+  },
+  "dependencies": {
+    "glob": "^7.1.2"
+  }
+}
