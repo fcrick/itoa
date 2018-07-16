@@ -1,6 +1,6 @@
 (module
  (type $iiv (func (param i32 i32)))
- (memory $0 0)
+ (import "env" "memory" (memory $0 0))
  (export "itoa" (func $assembly/index/itoa))
  (export "memory" (memory $0))
  (func $assembly/index/itoa (; 0 ;) (type $iiv) (param $0 i32) (param $1 i32)

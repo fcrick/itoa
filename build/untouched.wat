@@ -1,9 +1,9 @@
 (module
  (type $iiv (func (param i32 i32)))
+ (import "env" "memory" (memory $0 0))
  (global $assembly/index/zero i32 (i32.const 48))
  (global $assembly/index/dash i32 (i32.const 45))
  (global $HEAP_BASE i32 (i32.const 8))
- (memory $0 0)
  (export "itoa" (func $assembly/index/itoa))
  (export "memory" (memory $0))
  (func $assembly/index/itoa (; 0 ;) (type $iiv) (param $0 i32) (param $1 i32)
