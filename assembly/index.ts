@@ -1,9 +1,11 @@
+import {abs, i32, u8, u64, load, store} from "builtins"
+
 const zero: u8 = 48
 const dash: u8 = 45
 
 export function itoa(dest: i32, i: i32): void {
-    // INT_MIN can't be negated, so we just hardcode the output for simplicity
-    if (i === -2147483648) {
+    // i32.MIN_VALUE can't be negated, so we just hardcode the output for simplicity
+    if (i === i32.MIN_VALUE) {
         store<u64>(dest, 0x3431322d0000000b)
         store<u64>(dest + 8, 0x0038343633383437)
         return;
