@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "description": "Minimal i32 itoa in web assembly",
   "main": "index.js",
+  "files": [
+    "build/optimized.wasm",
+    "assembly/index.d.ts",
+    "index.js"
+  ],
   "scripts": {
     "test": "node tests/index.js",
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --importMemory --sourceMap --debug --runtime none",
     "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --importMemory --sourceMap --optimize --runtime none",
-    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "build": "tsc --build ./assembly/tsconfig.json && npm run asbuild"
   },
   "author": "Francis Crick <fcrick@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "assemblyscript": "^0.13.3"
+    "assemblyscript": "^0.13.3",
+    "typescript": "^3.9.6"
   }
 }
