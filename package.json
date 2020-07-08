@@ -18,7 +18,8 @@
     "build:wasmtobase64": "node -e 'fs.writeFileSync(`./src/optimized.wasm.ts`, `export default Buffer.from(\"${fs.readFileSync(\"./build/optimized.wasm\").toString(\"base64\")}\", \"base64\")`)'",
     "build:astypes": "tsc --build ./assembly/tsconfig.json",
     "build:src": "tsc --build ./src/tsconfig.json",
-    "build": "npm run asbuild:optimized && npm run build:wasmtobase64 && npm run build:src && npm run build:astypes"
+    "build": "npm run asbuild:optimized && npm run build:wasmtobase64 && npm run build:src && npm run build:astypes",
+    "postinstall": "npm run build"
   },
   "author": "Francis Crick <fcrick@gmail.com>",
   "license": "ISC",
