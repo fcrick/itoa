@@ -1,7 +1,6 @@
 npm-debug.*
-docs/
 node_modules/
-out/
-raw/
 build/
+lib/
+src/optimized.wasm.ts
 assembly/*.d.ts

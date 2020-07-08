@@ -1,7 +1,8 @@
-const assert = require("assert");
+import assert from 'assert'
+import itoaModule from '../index.js'
 
 const memory = new WebAssembly.Memory({initial:1})
-const {itoa} = require('..')({env:{memory}})
+const {itoa} = itoaModule({env:{memory}})
 
 const buffer = memory.buffer
 const dataView = new DataView(buffer, 0, buffer.byteLength)
