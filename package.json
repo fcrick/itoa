@@ -1,6 +1,6 @@
 {
   "name": "@fcrick/itoa",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Minimal i32 itoa in web assembly",
   "main": "lib/index.js",
   "type": "module",
